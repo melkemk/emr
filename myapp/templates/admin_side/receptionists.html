@@ -3,42 +3,36 @@
 
 
 <!-- Mirrored from www.konnectplugins.com/proclinic/Vertical/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 24 Jun 2024 11:26:52 GMT -->
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ProClinic-Bootstrap4 Hospital Admin</title>
-	<!-- Fav  Icon Link -->
-	<link rel="shortcut icon" type="image/png" href="../images/fav.png">
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" href="../css/bootstrap.min.css">
-	<!-- themify icons CSS -->
-	<link rel="stylesheet" href="../css/themify-icons.css">
-	<!-- Animations CSS -->
-	<link rel="stylesheet" href="../css/animate.css">
-	<!-- Main CSS -->
-	<link rel="stylesheet" href="../css/styles.css">
-	<link rel="stylesheet" href="../css/red.css" id="style_theme">
-	<link rel="stylesheet" href="../css/responsive.css">
-	<!-- morris charts -->
-	<link rel="stylesheet" href="../charts/css/morris.css">
-	<!-- jvectormap -->
-	<link rel="stylesheet" href="../css/jquery-jvectormap.css">
+{% load static %}
 
-	<script src="../js/modernizr.min.js"></script>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ProClinic-Bootstrap4 Hospital Admin</title>
+    <!-- Fav  Icon Link -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/fav.png' %}">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- themify icons CSS -->
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+    <!-- Animations CSS -->
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/red.css' %}" id="style_theme">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <!-- morris charts -->
+    <link rel="stylesheet" href="{% static 'charts/css/morris.css' %}">
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="{% static 'css/jquery-jvectormap.css' %}">
+
+    <script src="{% static 'js/modernizr.min.js' %}"></script>
 </head>
 
+
 <body>
-	<!-- Pre Loader -->
-	<div class="loading">
-		<div class="spinner">
-			<div class="double-bounce1"></div>
-			<div class="double-bounce2"></div>
-		</div>
-	</div>
-	<!--/Pre Loader -->
-	
-	<!-- /Color Changer -->
+
 	<div class="wrapper">
 		<!-- Sidebar -->
 		<nav id="sidebar" class="proclinic-bg">
@@ -60,20 +54,20 @@
 				
 				<li>
 					<a href="#nav-doctors" data-toggle="collapse" aria-expanded="false">
-						<span class="ti-user"></span> Doctors
+						<span class="ti-user"></span> lab technician
 					</a>
 					<ul class="collapse list-unstyled" id="nav-doctors">
 						<li>
-							<a href="add-doctor.html">Add Doctor</a>
+							<a href="add-doctor.html">Add lab technician</a>
 						</li>
 						<li>
-							<a href="doctors.html">All Doctors</a>
+							<a href="doctors.html">All lab technician</a>
 						</li>
 						<li>
-							<a href="about-doctor.html">Doctor Details</a>
+							<a href="about-doctor.html">lab technician Details</a>
 						</li>
 						<li>
-							<a href="edit-doctor.html">Edit Doctor</a>
+							<a href="edit-doctor.html">Edit lab technician</a>
 						</li>
 					</ul>
 				</li>
@@ -227,7 +221,7 @@
 		<!-- Widget Item -->
 		<div class="col-md-12">
 			<div class="widget-area-2 proclinic-box-shadow">
-				<h3 class="widget-title">Doctors List</h3>
+				<h3 class="widget-title">lab technician List</h3>
 				<div class="table-responsive mb-3">
 					<table id="tableId" class="table table-bordered table-striped">
 						<thead>
@@ -238,239 +232,43 @@
 										<label class="custom-control-label" for="select-all"></label>
 									</div>
 								</th>
-								<th>Doctor ID</th>
-								<th>Doctor Name</th>
+								<th>technician  ID</th>
+								<th>technician  Name</th>
 								<th>Experience <small>(in Years)</small></th>
-								<th>Phone</th>
-								<th>Specialization</th>
 								<th>Availability</th>
 							</tr>
 						</thead>
 						<tbody>
+
+
+
+							{% for technician in data %}
 							<tr>
 								<td>
 									<div class="custom-control custom-checkbox">
-										<input class="custom-control-input" type="checkbox" id="1">
-										<label class="custom-control-label" for="1"></label>
+										<input class="custom-control-input" type="checkbox" id="{{ technician.receptionist_id }}">
+										<label class="custom-control-label" for="{{ technician.receptionist_id }}"></label>
 									</div>
 								</td>
-								<td>1</td>
-								<td>Manoj Kumar</td>
-								<td>10</td>
-								<td>333-444-7777</td>
-								<td>Dental</td>
+								<td>{{ technician.receptionist_id }}</td>
+								<td>{{ technician.first_name }} {{ technician.last_name }}</td>
+								<td>{{ technician.contact_info }}</td>
+								<td>{{ technician.specialization }}</td>  <!-- Adjust as per your model -->
 								<td>
-									<span class="badge badge-success">Available</span>
+									<!-- Assuming you have an 'available' field in LabTechnician model -->
+									{% if technician.available %}
+										<span class="badge badge-success">Available</span>
+									{% else %}
+										<span class="badge badge-danger">Not Available</span>
+									{% endif %}
 								</td>
 							</tr>
-							<tr>
-								<td>
-									<div class="custom-control custom-checkbox">
-										<input class="custom-control-input" type="checkbox" id="2">
-										<label class="custom-control-label" for="2"></label>
-									</div>
-								</td>
-								<td>2</td>
-								<td>Riya </td>
-								<td>6</td>
-								<td>3423-232-987</td>
-								<td>Ortho</td>
-								<td>
-									<span class="badge badge-warning">On Leave</span>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="custom-control custom-checkbox">
-										<input class="custom-control-input" type="checkbox" id="3">
-										<label class="custom-control-label" for="3"></label>
-									</div>
-								</td>
-								<td>3</td>
-								<td>Paul</td>
-								<td>15</td>
-								<td>3423-132-987</td>
-								<td>General Physician</td>
-								<td>
-									<span class="badge badge-danger">Not Available</span>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="custom-control custom-checkbox">
-										<input class="custom-control-input" type="checkbox" id="4">
-										<label class="custom-control-label" for="4"></label>
-									</div>
-								</td>
-								<td>4</td>
-								<td>Manoj Kumar</td>
-								<td>20</td>
-								<td>333-444-7777</td>
-								<td>ENT</td>
-								<td>
-									<span class="badge badge-success">Available</span>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="custom-control custom-checkbox">
-										<input class="custom-control-input" type="checkbox" id="5">
-										<label class="custom-control-label" for="5"></label>
-									</div>
-								</td>
-								<td>5</td>
-								<td>Riya </td>
-								<td>16</td>
-								<td>3423-232-987</td>
-								<td>General Physician</td>
-								<td>
-									<span class="badge badge-warning">On Leave</span>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="custom-control custom-checkbox">
-										<input class="custom-control-input" type="checkbox" id="6">
-										<label class="custom-control-label" for="6"></label>
-									</div>
-								</td>
-								<td>6</td>
-								<td>Paul</td>
-								<td>12</td>
-								<td>3423-132-987</td>
-								<td>Ortho</td>
-								<td>
-									<span class="badge badge-danger">Not Available</span>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="custom-control custom-checkbox">
-										<input class="custom-control-input" type="checkbox" id="7">
-										<label class="custom-control-label" for="7"></label>
-									</div>
-								</td>
-								<td>7</td>
-								<td>Manoj Kumar</td>
-								<td>19</td>
-								<td>333-444-7777</td>
-								<td>Nuero Surgen</td>
-								<td>
-									<span class="badge badge-success">Available</span>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="custom-control custom-checkbox">
-										<input class="custom-control-input" type="checkbox" id="1">
-										<label class="custom-control-label" for="1"></label>
-									</div>
-								</td>
-								<td>1</td>
-								<td>Manoj Kumar</td>
-								<td>10</td>
-								<td>333-444-7777</td>
-								<td>Dental</td>
-								<td>
-									<span class="badge badge-success">Available</span>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="custom-control custom-checkbox">
-										<input class="custom-control-input" type="checkbox" id="2">
-										<label class="custom-control-label" for="2"></label>
-									</div>
-								</td>
-								<td>2</td>
-								<td>Riya </td>
-								<td>6</td>
-								<td>3423-232-987</td>
-								<td>Ortho</td>
-								<td>
-									<span class="badge badge-warning">On Leave</span>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="custom-control custom-checkbox">
-										<input class="custom-control-input" type="checkbox" id="3">
-										<label class="custom-control-label" for="3"></label>
-									</div>
-								</td>
-								<td>3</td>
-								<td>Paul</td>
-								<td>15</td>
-								<td>3423-132-987</td>
-								<td>General Physician</td>
-								<td>
-									<span class="badge badge-danger">Not Available</span>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="custom-control custom-checkbox">
-										<input class="custom-control-input" type="checkbox" id="4">
-										<label class="custom-control-label" for="4"></label>
-									</div>
-								</td>
-								<td>4</td>
-								<td>Manoj Kumar</td>
-								<td>20</td>
-								<td>333-444-7777</td>
-								<td>ENT</td>
-								<td>
-									<span class="badge badge-success">Available</span>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="custom-control custom-checkbox">
-										<input class="custom-control-input" type="checkbox" id="5">
-										<label class="custom-control-label" for="5"></label>
-									</div>
-								</td>
-								<td>5</td>
-								<td>Riya </td>
-								<td>16</td>
-								<td>3423-232-987</td>
-								<td>General Physician</td>
-								<td>
-									<span class="badge badge-warning">On Leave</span>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="custom-control custom-checkbox">
-										<input class="custom-control-input" type="checkbox" id="6">
-										<label class="custom-control-label" for="6"></label>
-									</div>
-								</td>
-								<td>6</td>
-								<td>Paul</td>
-								<td>12</td>
-								<td>3423-132-987</td>
-								<td>Ortho</td>
-								<td>
-									<span class="badge badge-danger">Not Available</span>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<div class="custom-control custom-checkbox">
-										<input class="custom-control-input" type="checkbox" id="7">
-										<label class="custom-control-label" for="7"></label>
-									</div>
-								</td>
-								<td>7</td>
-								<td>Manoj Kumar</td>
-								<td>19</td>
-								<td>333-444-7777</td>
-								<td>Nuero Surgen</td>
-								<td>
-									<span class="badge badge-success">Available</span>
-								</td>
-							</tr>
+							{% endfor %}
+							
+
+  
+
+
 						</tbody>
 					</table>
 					

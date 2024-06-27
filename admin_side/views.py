@@ -83,12 +83,12 @@ def add_lab_technician(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) 
     return render(request, 'admin_side/add-lab-technician.html')
-@api_view(['GET', 'PUT'])
-def all_doctors(request):
-    if request.method == 'GET':
-        doctors = Doctor.objects.all()
-        serializer = DoctorSerializer(doctors, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+# @api_view(['GET', 'PUT'])
+# def all_doctors(request):
+#     if request.method == 'GET':
+#         doctors = Doctor.objects.all()
+#         serializer = DoctorSerializer(doctors, many=True)
+#         return Response(serializer.data, status=status.HTTP_200_OK)
     
 
 
@@ -157,16 +157,23 @@ def edit_receptionist(request):
 
 @api_view(['GET'])
 def doctors(request):
-    return render(request, 'admin_side/doctors.html')
+    doctors = Doctor.objects.all()
+    serializer = DoctorSerializer(doctors, many=True)
+    return render(request, 'admin_side/doctors.html', {'data': serializer.data})
 
+    
 @api_view(['GET'])
 def index(request):
     return render(request, 'admin_side/index.html')
 
 @api_view(['GET'])
 def lab_technicians(request):
-    return render(request, 'admin_side/lab-technicians.html')
-
+    lab_technician  = LabTechnician.objects.all()
+    serializer = LabTechniciansSerializer(lab_technician, many=True)
+    return render(request, 'admin_side/lab-technicians.html', {'data': serializer.data})
 @api_view(['GET'])
 def receptionists(request):
-    return render(request, 'admin_side/receptionists.html')
+    
+    receptionist  = Receptionist.objects.all()
+    serializer = ReceptionistSerializer(receptionist, many=True) 
+    return render(request, 'admin_side/receptionists.html', {'data': serializer.data})
