@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ProClinic-Bootstrap4 Hospital Admin</title>
+    <!-- Fav Icon Link -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/fav.png' %}">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- themify icons CSS -->
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+    <!-- Animations CSS -->
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/red.css' %}" id="style_theme">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <!-- morris charts -->
+    <link rel="stylesheet" href="{% static 'charts/css/morris.css' %}">
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="{% static 'css/jquery-jvectormap.css' %}">
+
+    <script src="{% static 'js/modernizr.min.js' %}"></script>
+</head>
+
+<body>
+    <!-- Pre Loader -->
+    <div class="loading">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+    <!--/Pre Loader -->
+
+    <!-- /Color Changer -->
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="proclinic-bg">
+            <div class="sidebar-header">
+                <a href="index.html"><img src="{% static 'images/logo.png' %}" class="logo" alt="logo"></a>
+            </div>
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#nav-dashboard" data-toggle="collapse" aria-expanded="true">
+                        <span class="ti-home"></span> Dashboard
+                    </a>
+                    <ul class="collapse list-unstyled show" id="nav-dashboard">
+                        <li>
+                            <a href="{% static 'css/jquery-jvectormap.css' %}">Home</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#nav-doctors" data-toggle="collapse" aria-expanded="false">
+                        <span class="ti-user"></span> receptionist
+                    </a>
+                    <ul class="collapse list-unstyled" id="nav-doctors">
+                        <li>
+                            <a href="{% static 'add-doctor.html' %}">Add receptionist</a>
+                        </li>
+                        <li>
+                            <a href="{% static 'doctors.html' %}">All receptionist</a>
+                        </li>
+                        <li>
+                            <a href="{% static 'about-doctor.html' %}">receptionist Details</a>
+                        </li>
+                        <li>
+                            <a href="{% static 'edit-doctor.html' %}">Edit receptionist</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#nav-receptioinsts" data-toggle="collapse" aria-expanded="false">
+                        <span class="ti-user"></span> Receptionists
+                    </a>
+                    <ul class="collapse list-unstyled" id="nav-receptioinsts">
+                        <li>
+                            <a href="{% static 'add-receptionist.html' %}">Add Receptionist</a>
+                        </li>
+                        <li>
+                            <a href="{% static 'receptionists.html' %}">All Receptionists</a>
+                        </li>
+                        <li>
+                            <a href="{% static 'about-receptionist.html' %}">Receptionist Details</a>
+                        </li>
+                        <li>
+                            <a href="{% static 'edit-receptionist.html' %}">Edit Receptionist</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#nav-lab-technician" data-toggle="collapse" aria-expanded="false">
+                        <span class="ti-user"></span> Lab Technicians
+                    </a>
+                    <ul class="collapse list-unstyled" id="nav-lab-technician">
+                        <li>
+                            <a href="{% static 'add-lab-technician.html' %}">Add Lab Technicians</a>
+                        </li>
+                        <li>
+                            <a href="{% static 'lab-technicians.html' %}">All Lab Technicians</a>
+                        </li>
+                        <li>
+                            <a href="{% static 'about-lab-technician.html' %}">Lab Technician Details</a>
+                        </li>
+                        <li>
+                            <a href="{% static 'edit-lab-technician.html' %}">Edit Lab Technician</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="nav-help animated fadeIn">
+                <h5><span class="ti-comments"></span> Need Help</h5>
+                <h6>
+                    <span class="ti-mobile"></span> +1 1234 567 890</h6>
+                <h6>
+                    <span class="ti-email"></span> email@site.com</h6>
+                <p class="copyright-text">Copy rights &copy; 2018</p>
+            </div>
+        </nav>
+        <!-- /Sidebar -->
+        <!-- Page Content -->
+        <div id="content">
+            <!-- Top Navigation -->
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="responsive-logo">
+                        <a href="index.html"><img src="{% static 'images/logo-dark.png' %}" class="logo" alt="logo"></a>
+                    </div>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <span class="ti-menu" id="sidebarCollapse"></span>
+                        </li>
+                        <li class="nav-item">
+                            <span title="Fullscreen" class="ti-fullscreen fullscreen"></span>
+                        </li>
+                        <li class="nav-item">
+                            <a data-toggle="modal" data-target=".proclinic-modal-lg">
+                                <span class="ti-search"></span>
+                            </a>
+                            <div class="modal fade proclinic-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog modal-lorvens">
+                                    <div class="modal-content proclinic-box-shadow2">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Search Patient/Doctor:</h5>
+                                            <span class="ti-close" data-dismiss="modal" aria-label="Close">
+                                            </span>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="search-term"
+                                                        placeholder="Type text here">
+                                                    <button type="button" class="btn btn-lorvens proclinic-bg">
+                                                        <span class="ti-location-arrow"></span> Search</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="ti-announcement"></span>
+                            </a>
+                            <div class="dropdown-menu proclinic-box-shadow2 notifications animated flipInY">
+                                <h5>Notifications</h5>
+                                <a class="dropdown-item" href="#">
+                                    <span class="ti-wheelchair"></span> New Patient Added</a>
+                                <a class="dropdown-item" href="#">
+                                    <span class="ti-money"></span> Patient payment done</a>
+                                <a class="dropdown-item" href="#">
+                                    <span class="ti-time"></span>Patient Appointment booked</a>
+                                <a class="dropdown-item" href="#">
+                                    <span class="ti-wheelchair"></span> New Patient Added</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="ti-user"></span>
+                            </a>
+                            <div class="dropdown-menu proclinic-box-shadow2 profile animated flipInY">
+                                <h5>John Willing</h5>
+                                <a class="dropdown-item" href="#">
+                                    <span class="ti-settings"></span> Settings</a>
+                                <a class="dropdown-item" href="#">
+                                    <span class="ti-help-alt"></span> Help</a>
+                                <a class="dropdown-item" href="#">
+                                    <span class="ti-power-off"></span> Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+            <!-- /Top Navigation -->
+            <!-- Breadcrumb -->
+            <!-- Page Title -->
+            <div class="row no-margin-padding">
+                <div class="col-md-6">
+                    <h3 class="block-title">Quick Statistics</h3>
+                </div>
+                <div class="col-md-6">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="index.html">
+                                <span class="ti-home"></span>
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item active">Dashboard</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- /Page Title -->
+
+            <!-- /Breadcrumb -->
+
+            <!-- Main Content -->
+            <div class="container-fluid">
+
+                <div class="row">
+                    <!-- Widget Item -->
+                    <div class="col-md-12">
+                        <div class="widget-area-2 proclinic-box-shadow">
+                            <h3 class="widget-title">receptionist Details</h3>
+                            <div class="row no-mp">
+                                <div class="col-md-4">
+                                    <div class="card mb-4">
+                                        <img class="card-img-top" src="{% static 'images/doctor.jpg' %}" alt="Card image">
+                                        <div class="card-body">
+                                            <h4 class="card-title">{{receptionist.first_name }}  {{receptionist.last_name}}</h4>
+                                            <p class="card-text"> {{receptionist.contact_info}}  </p>
+                                            <button type="button" class="btn btn-success mb-2"><span class="ti-pencil-alt"></span> Edit
+                                                receptionist</button>
+                                            <button type="button" class="btn btn-danger"><span class="ti-trash"></span> Delete
+                                                receptionist</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-striped">
+                                            <tbody>
+                                                <tr>
+                                                    <td><strong>Specialization</strong></td>
+                                                    <td> {{ receptionist.Specialization }} </td>
+                                                </tr>
+                                                
+                                                <tr>
+                                                    <td><strong>Gender</strong></td>
+                                                    <td>Male</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>name</strong></td>
+                                                    <td> {{receptionist.first_name }}  {{receptionist.last_name}} </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Phone</strong> </td>
+                                                    <td>+91 11111 11111</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>contact info  </strong> </td>
+                                                    <td> {{receptionist.contact_info}} </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Email</strong></td>
+                                                    <td> {{ receptionist.email  }}  </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <!--Export links-->
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination justify-content-center export-pagination">
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#"><span class="ti-download"></span> csv</a>
+                                                </li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#"><span class="ti-printer"></span> print</a>
+                                                </li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#"><span class="ti-file"></span> PDF</a>
+                                                </li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#"><span class="ti-align-justify"></span> Excel</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                        <!-- /Export links-->
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- /Widget Item -->
+
+                </div>
+            </div>
+            <!-- /Main Content -->
+        </div>
+        <!-- /Page Content -->
+    </div>
+    <!-- Back to Top -->
+    <a id="back-to-top" href="#" class="back-to-top">
+        <span class="ti-angle-up"></span>
+    </a>
+    <!-- /Back to Top -->
+
+    <!-- Jquery Library-->
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <!-- Popper Library-->
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <!-- Bootstrap Library-->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- morris charts -->
+    <script src="{% static 'charts/js/raphael-min.js' %}"></script>
+    <script src="{% static 'charts/js/morris.min.js' %}"></script>
+    <script src="{% static 'js/custom-morris.js' %}"></script>
+
+    <!-- Custom Script-->
+    <script src="{% static 'js/custom.js' %}"></script>
+</body>
+
+</html>
