@@ -50,9 +50,9 @@ def edit_appointment(request):
     return Response({'error': 'Method not allowed'}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
 @api_view(['GET'])
-def about_appointment(request, doctor, id):
+def about_appointment(request,id):
     try:  
-        appointments = Appointment.objects.filter(doctor=doctor, patient=id) 
+        appointments = Appointment.objects.filter(doctor= request.session['doctor_id']  , patient=id) 
         if appointments.exists():
             appointments_data = AppointmentSerializer(appointments, many=True).data
             return render(request, 'doctor_side/about-appointment.html', {'appointments': appointments_data}) 
