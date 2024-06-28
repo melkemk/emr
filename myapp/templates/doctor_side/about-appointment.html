@@ -51,7 +51,7 @@
                     </a>
                     <ul class="collapse list-unstyled show" id="nav-dashboard">
                         <li>
-                            <a href="{% url 'index' %}">Home</a>
+                            <a href="{% url 'index1' %}">Home</a>
                         </li>
                     </ul>
                 </li>
@@ -60,14 +60,14 @@
                         <span class="ti-pencil-alt"></span> Appointments
                     </a>
                     <ul class="collapse list-unstyled" id="nav-appointment">
-                        {% comment %} <li>
-                            <a href="{% url '/doctor_side/appointments/1/' %}">All Appointments</a>
+                        <li>
+                            <a href="{% url 'appointments' id=4 %}">All Appointments</a>
                         </li>
                         <li>
-                            <a href="{% url 'about_appointment' %}">Appointment Details</a>
+                            <a href="{% url 'about-appointment' doctor=4 id=1 %}">Appointment Details</a>
                         </li>
                         <li>
-                            <a href="{% url 'edit_appointment' %}">Edit Appointment</a> {% endcomment %}
+                            <a href="{% url 'edit-appointment' %}">Edit Appointment</a>
                         </li>
                     </ul>
                 </li>

@@ -51,46 +51,47 @@
                     </a>
                     <ul class="collapse list-unstyled show" id="nav-dashboard">
                         <li>
-                            <a href="{% static 'css/jquery-jvectormap.css' %}">Home</a>
+                            <a href="{% url 'index' %}">Home</a>
                         </li>
                     </ul>
                 </li>
 
+                
                 <li>
                     <a href="#nav-doctors" data-toggle="collapse" aria-expanded="false">
-                        <span class="ti-user"></span> receptionist
+                        <span class="ti-user"></span> Doctors
                     </a>
                     <ul class="collapse list-unstyled" id="nav-doctors">
                         <li>
-                            <a href="{% static 'add-doctor.html' %}">Add receptionist</a>
+                            <a href="{% url 'add-doctor' %}">Add Doctor</a>
                         </li>
                         <li>
-                            <a href="{% static 'doctors.html' %}">All receptionist</a>
+                            <a href="{% url 'doctors' %}">All Doctors</a>
                         </li>
                         <li>
-                            <a href="{% static 'about-doctor.html' %}">receptionist Details</a>
+                            <a href="{% url 'about-doctor' doctor_id=1 %}">Doctor Details</a>
                         </li>
                         <li>
-                            <a href="{% static 'edit-doctor.html' %}">Edit receptionist</a>
+                            <a href="{% url 'edit-doctor' %}">Edit Doctor</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#nav-receptioinsts" data-toggle="collapse" aria-expanded="false">
+                    <a href="#nav-receptionists" data-toggle="collapse" aria-expanded="false">
                         <span class="ti-user"></span> Receptionists
                     </a>
-                    <ul class="collapse list-unstyled" id="nav-receptioinsts">
+                    <ul class="collapse list-unstyled" id="nav-receptionists">
                         <li>
-                            <a href="{% static 'add-receptionist.html' %}">Add Receptionist</a>
+                            <a href="{% url 'add-receptionist' %}">Add Receptionist</a>
                         </li>
                         <li>
-                            <a href="{% static 'receptionists.html' %}">All Receptionists</a>
+                            <a href="{% url 'receptionists' %}">All Receptionists</a>
                         </li>
                         <li>
-                            <a href="{% static 'about-receptionist.html' %}">Receptionist Details</a>
+                            <a href="{% url 'about-receptionist' receptionist_id=1 %}">Receptionist Details</a>
                         </li>
                         <li>
-                            <a href="{% static 'edit-receptionist.html' %}">Edit Receptionist</a>
+                            <a href="{% url 'edit-receptionist' %}">Edit Receptionist</a>
                         </li>
                     </ul>
                 </li>
@@ -100,16 +101,16 @@
                     </a>
                     <ul class="collapse list-unstyled" id="nav-lab-technician">
                         <li>
-                            <a href="{% static 'add-lab-technician.html' %}">Add Lab Technicians</a>
+                            <a href="{% url 'add-lab-technician' %}">Add Lab Technicians</a>
                         </li>
                         <li>
-                            <a href="{% static 'lab-technicians.html' %}">All Lab Technicians</a>
+                            <a href="{% url 'lab-technicians' %}">All Lab Technicians</a>
                         </li>
                         <li>
-                            <a href="{% static 'about-lab-technician.html' %}">Lab Technician Details</a>
+                            <a href="{% url 'about-lab-technician' technician_id=1 %}">Lab Technician Details</a>
                         </li>
                         <li>
-                            <a href="{% static 'edit-lab-technician.html' %}">Edit Lab Technician</a>
+                            <a href="{% url 'edit-lab-technician' %}">Edit Lab Technician</a>
                         </li>
                     </ul>
                 </li>

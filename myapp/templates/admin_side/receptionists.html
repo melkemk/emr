@@ -41,74 +41,74 @@
 			</div>
 			<ul class="list-unstyled components">
 				<li class="active">
-					<a href="#nav-dashboard" data-toggle="collapse" aria-expanded="true">
-						<span class="ti-home"></span> Dashboard
-					</a>
-					<ul class="collapse list-unstyled show" id="nav-dashboard">
-						<li>
-							<a href="index.html">Home</a>
-						</li>
-						
-					</ul>
-				</li>
-				
-				<li>
-					<a href="#nav-doctors" data-toggle="collapse" aria-expanded="false">
-						<span class="ti-user"></span> lab technician
-					</a>
-					<ul class="collapse list-unstyled" id="nav-doctors">
-						<li>
-							<a href="add-doctor.html">Add lab technician</a>
-						</li>
-						<li>
-							<a href="doctors.html">All lab technician</a>
-						</li>
-						<li>
-							<a href="about-doctor.html">lab technician Details</a>
-						</li>
-						<li>
-							<a href="edit-doctor.html">Edit lab technician</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="#nav-receptioinsts" data-toggle="collapse" aria-expanded="false">
-						<span class="ti-user"></span> Receptioinsts
-					</a>
-					<ul class="collapse list-unstyled" id="nav-receptioinsts">
-						<li>
-							<a href="add-receptionist.html">Add Receptioinst</a>
-						</li>
-						<li>
-							<a href="receptionists.html">All Receptioinsts</a>
-						</li>
-						<li>
-							<a href="about-receptionist.html">Receptioinst Details</a>
-						</li>
-						<li>
-							<a href="edit-receptionist.html">Edit Receptioinst</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="#nav-lab-technician" data-toggle="collapse" aria-expanded="false">
-						<span class="ti-user"></span> Lab Technicians
-					</a>
-					<ul class="collapse list-unstyled" id="nav-lab-technician">
-						<li>
-							<a href="add-lab-technician.html">Add Lab Technicians</a>
-						</li>
-						<li>
-							<a href="lab-technicians.html">All Lab Technicians</a>
-						</li>
-						<li>
-							<a href="about-lab-technician.html">Lab Technician Details</a>
-						</li>
-						<li>
-							<a href="edit-lab-technician.html">Edit Lab Technician</a>
-						</li>
-					</ul>
-				</li>
+                    <a href="#nav-dashboard" data-toggle="collapse" aria-expanded="true">
+                        <span class="ti-home"></span> Dashboard
+                    </a>
+                    <ul class="collapse list-unstyled show" id="nav-dashboard">
+                        <li>
+                            <a href="{% url 'index' %}">Home</a>
+                        </li>
+                    </ul>
+                </li>
+
+                
+                <li>
+                    <a href="#nav-doctors" data-toggle="collapse" aria-expanded="false">
+                        <span class="ti-user"></span> Doctors
+                    </a>
+                    <ul class="collapse list-unstyled" id="nav-doctors">
+                        <li>
+                            <a href="{% url 'add-doctor' %}">Add Doctor</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'doctors' %}">All Doctors</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'about-doctor' doctor_id=1 %}">Doctor Details</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'edit-doctor' %}">Edit Doctor</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#nav-receptionists" data-toggle="collapse" aria-expanded="false">
+                        <span class="ti-user"></span> Receptionists
+                    </a>
+                    <ul class="collapse list-unstyled" id="nav-receptionists">
+                        <li>
+                            <a href="{% url 'add-receptionist' %}">Add Receptionist</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'receptionists' %}">All Receptionists</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'about-receptionist' receptionist_id=1 %}">Receptionist Details</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'edit-receptionist' %}">Edit Receptionist</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#nav-lab-technician" data-toggle="collapse" aria-expanded="false">
+                        <span class="ti-user"></span> Lab Technicians
+                    </a>
+                    <ul class="collapse list-unstyled" id="nav-lab-technician">
+                        <li>
+                            <a href="{% url 'add-lab-technician' %}">Add Lab Technicians</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'lab-technicians' %}">All Lab Technicians</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'about-lab-technician' technician_id=1 %}">Lab Technician Details</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'edit-lab-technician' %}">Edit Lab Technician</a>
+                        </li>
+                    </ul>
+                </li>
 			<div class="nav-help animated fadeIn">
 				<h5><span class="ti-comments"></span> Need Help</h5>
 				<h6>
@@ -309,18 +309,18 @@
 	<!-- /Back to Top -->
 	
 	<!-- Jquery Library-->
-	<script src="../js/jquery-3.2.1.min.js"></script>
-	<!-- Popper Library-->
-	<script src="../js/popper.min.js"></script>
-	<!-- Bootstrap Library-->
-	<script src="../js/bootstrap.min.js"></script>
-	<!-- morris charts -->
-	<script src="../charts/js/raphael-min.js"></script>
-	<script src="../charts/js/morris.min.js"></script>
-	<script src="../js/custom-morris.js"></script>
+	<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <!-- Popper Library-->
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <!-- Bootstrap Library-->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- morris charts -->
+    <script src="{% static 'charts/js/raphael-min.js' %}"></script>
+    <script src="{% static 'charts/js/morris.min.js' %}"></script>
+    <script src="{% static 'js/custom-morris.js' %}"></script>
 
-	<!-- Custom Script-->
-	<script src="../js/custom.js"></script>
+    <!-- Custom Script-->
+    <script src="{% static 'js/custom.js' %}"></script>
 </body>
 
 
