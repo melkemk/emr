@@ -16,5 +16,8 @@ urlpatterns = [
     path('doctors/', doctors, name='doctors'), 
     path('lab-technicians/', lab_technicians, name='lab-technicians'),
     path('receptionists/', receptionists, name='receptionists'),
+    path ('delete-doctor/<int:id>/', delete_doctor,name= 'delete-doctor' ),
+    path ('delete-receptionist/<int:id>/', delete_receptionist,name= 'delete-doctor' ),
+    path ('delete-technician/<int:id>/', delete_technician,name= 'delete-doctor' ),
 ]
  

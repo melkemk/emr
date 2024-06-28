@@ -238,10 +238,14 @@
                                         <div class="card-body">
                                             <h4 class="card-title">{{receptionist.first_name }}  {{receptionist.last_name}}</h4>
                                             <p class="card-text"> {{receptionist.contact_info}}  </p>
-                                            <button type="button" class="btn btn-success mb-2"><span class="ti-pencil-alt"></span> Edit
-                                                receptionist</button>
-                                            <button type="button" class="btn btn-danger"><span class="ti-trash"></span> Delete
-                                                receptionist</button>
+                                            <a href="/admin_side/edit-receptioinst/" class="btn btn-success mb-2">
+                                                <span class="ti-pencil-alt"></span> Edit lab technician
+                                            </a>
+                                            
+                                            
+                                            <a href="/admin_side/delete-receptionist/{{ receptionist.receptionist_id }}" class="btn btn-danger mb-2">
+                                                <span class="ti-pencil-alt"></span> Delete lab technician
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

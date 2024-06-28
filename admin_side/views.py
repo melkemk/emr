@@ -44,7 +44,34 @@ def add_doctor(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     return render(request, 'admin_side/add-doctor.html')
 
+@api_view(['GET'])
+def delete_doctor(request, id):
+    try:
+        doctor = Doctor.objects.get(doctor_id=id)
+    except Doctor.DoesNotExist:
+        return Response({'error': 'Doctor not found'}, status=status.HTTP_404_NOT_FOUND)
+    
+    doctor.delete()
+    return Response(status=status.HTTP_204_NO_CONTENT)
+@api_view(['GET'])
+def delete_technician(request, id):
+    try:
+        lab = LabTechnician.objects.get(technician_id=id)
+    except LabTechnician.DoesNotExist:
+        return Response({'error': ' not found'}, status=status.HTTP_404_NOT_FOUND)
+    
+    lab.delete()
+    return Response(status=status.HTTP_204_NO_CONTENT)
+@api_view(['GET'])
+def delete_receptionist(request, id):
+    try:
+        receptionist = Receptionist.objects.get(receptionist_id=id)
+    except Receptionist.DoesNotExist:
+        return Response({'error': 'Doctor not found'}, status=status.HTTP_404_NOT_FOUND)
+    receptionist.delete()
+    return Response(status=status.HTTP_204_NO_CONTENT)
 
+ 
 
 
 
@@ -133,10 +160,10 @@ def add_receptionist(request):
 
 @api_view(['GET', 'POST'])
 def edit_receptionist(request):
-    print(111111111,request.data)
+    # print(111111111,request.data)
     if request.method == 'POST':
         try:
-            receptionist_id = request.data.get('receptionist_id')
+            receptionist_id = request.data.get('receptionist_id') 
             if not receptionist_id:
                 return Response({'error': 'receptionist_id is required'}, status=status.HTTP_400_BAD_REQUEST)
             receptionist = Receptionist.objects.get(receptionist_id=receptionist_id)

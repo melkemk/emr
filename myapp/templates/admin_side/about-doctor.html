@@ -68,7 +68,7 @@
                             <a href="{% static 'doctors.html' %}">All Doctors</a>
                         </li>
                         <li>
-                            <a href="{% static 'about-doctor.html' %}">Doctor Details</a>
+                            <a href="{% static 'about-doctor ' %}">Doctor Details</a>
                         </li>
                         <li>
                             <a href="{% static 'edit-doctor.html' %}">Edit Doctor</a>
@@ -241,10 +241,14 @@
                                                 bulk of the
                                                 card's
                                                 content.</p>
-                                            <button type="button" class="btn btn-success mb-2"><span class="ti-pencil-alt"></span> Edit
-                                                Doctor</button>
-                                            <button type="button" class="btn btn-danger"><span class="ti-trash"></span> Delete
-                                                Doctor</button>
+                                                <a href="/admin_side/edit-doctor/" class="btn btn-success mb-2">
+                                                    <span class="ti-pencil-alt"></span> Edit Doctor
+                                                </a>
+                                                
+                                                
+                                                <a href="/admin_side/delete-doctor/{{ doctor.doctor_id }}" class="btn btn-danger mb-2">
+                                                    <span class="ti-pencil-alt"></span> Delete Doctor
+                                                </a>
                                         </div>
                                     </div>
                                 </div>
@@ -316,7 +320,18 @@
         <span class="ti-angle-up"></span>
     </a>
     <!-- /Back to Top -->
+    <script>
+        function editd() {
+            console.log(111)
+            window.location.href = '/admin-side/edit-doctor'
+        }
+        function delete(id) {
+            console.log(1111,id)
+            window.location.href = '/admin-side/delete-doctor/?id=' + id;
+        }
+        
 
+    </script>
     <!-- Jquery Library-->
     <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
     <!-- Popper Library-->
@@ -330,6 +345,8 @@
 
     <!-- Custom Script-->
     <script src="{% static 'js/custom.js' %}"></script>
+ 
 </body>
+
 
 </html>
