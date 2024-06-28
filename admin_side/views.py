@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+import bcrypt 
 
 from Doctors.serializers import DoctorSerializer
 from LabTechnicians.serializers import LabTechniciansSerializer
@@ -33,14 +34,20 @@ def about_receptionist(request, receptionist_id=None):
 
 @api_view(['GET', 'POST'])
 def add_doctor(request):
-    # print(request.body)
     if request.method == 'POST':
-        serializer = DoctorSerializer(data=request.data)
-        # print(serializer.data)
+        data = request.data.copy()  
+        password = data.get('password')
+
+        if password:
+            hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
+            data['password'] = hashed_password
+        
+        serializer = DoctorSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
     return render(request, 'admin_side/add-doctor.html')
 
 @api_view(['GET'])
