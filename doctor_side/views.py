@@ -11,13 +11,17 @@ def index(request):
 
 
 @api_view(['GET', 'POST'])
-def appointments(request, id):
+def appointments(request):
+    if not request.session['doctor_id']:
+        return render(request,'login.html')
+    print(request.session['doctor_id'])
     if request.method == 'GET':
         try:
-            appointments = Appointment.objects.filter(doctor=id)
+            appointments = Appointment.objects.filter(doctor=request.session['doctor_id'])
             if not appointments.exists():
                 return Response({"error": "No appointments found for this doctor"}, status=status.HTTP_404_NOT_FOUND)
             return render(request, 'doctor_side/appointments.html', {'appointments': appointments})
+        
         except Appointment.DoesNotExist:
             return Response({"error": "No appointments found for this doctor"}, status=status.HTTP_404_NOT_FOUND)
         except Exception as e:
