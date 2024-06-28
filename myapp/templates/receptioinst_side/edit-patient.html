@@ -1,335 +1,333 @@
-
-
-
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-
-<!-- Mirrored from www.konnectplugins.com/proclinic/Vertical/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 24 Jun 2024 11:26:52 GMT -->
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ProClinic-Bootstrap4 Hospital Admin</title>
-	<!-- Fav  Icon Link -->
-	<link rel="shortcut icon" type="image/png" href="../images/fav.png">
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" href="../css/bootstrap.min.css">
-	<!-- themify icons CSS -->
-	<link rel="stylesheet" href="../css/themify-icons.css">
-	<!-- Animations CSS -->
-	<link rel="stylesheet" href="../css/animate.css">
-	<!-- Main CSS -->
-	<link rel="stylesheet" href="../css/styles.css">
-	<link rel="stylesheet" href="../css/red.css" id="style_theme">
-	<link rel="stylesheet" href="../css/responsive.css">
-	<!-- morris charts -->
-	<link rel="stylesheet" href="../charts/css/morris.css">
-	<!-- jvectormap -->
-	<link rel="stylesheet" href="../css/jquery-jvectormap.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ProClinic-Bootstrap4 Hospital Admin</title>
+    <!-- Fav  Icon Link -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/fav.png' %}">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- themify icons CSS -->
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+    <!-- Animations CSS -->
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/red.css' %}" id="style_theme">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <!-- morris charts -->
+    <link rel="stylesheet" href="{% static 'charts/css/morris.css' %}">
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="{% static 'css/jquery-jvectormap.css' %}">
 
-	<script src="../js/modernizr.min.js"></script>
+    <script src="{% static 'js/modernizr.min.js' %}"></script>
 </head>
 
 <body>
-	<!-- Pre Loader -->
-	<div class="loading">
-		<div class="spinner">
-			<div class="double-bounce1"></div>
-			<div class="double-bounce2"></div>
-		</div>
-	</div>
-	<!--/Pre Loader -->
-	
-	<!-- /Color Changer -->
-	<div class="wrapper">
-		<!-- Sidebar -->
-		<nav id="sidebar" class="proclinic-bg">
-			<div class="sidebar-header">
-				<a href="index.html"><img src="../images/logo.png" class="logo" alt="logo"></a>
-			</div>
-			<ul class="list-unstyled components">
-				<li class="active">
-					<a href="#nav-dashboard" data-toggle="collapse" aria-expanded="true">
-						<span class="ti-home"></span> Dashboard
-					</a>
-					<ul class="collapse list-unstyled show" id="nav-dashboard">
-						<li>
-							<a href="index.html">Home</a>
-						</li>
-						
-					</ul>
-				</li>
-				
-				<li>
-					<a href="#nav-patients" data-toggle="collapse" aria-expanded="false">
-						<span class="ti-wheelchair"></span> Patients
-					</a>
-					<ul class="collapse list-unstyled" id="nav-patients">
-						<li>
-							<a href="add-patient.html">Add Patient</a>
-						</li>
-						<li>
-							<a href="patients.html">All Patients</a>
-						</li>
-						<li>
-							<a href="about-patient.html">Patient Details</a>
-						</li>
-						<li>
-							<a href="edit-patient.html">Edit Patient</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="#nav-in-patients" data-toggle="collapse" aria-expanded="false">
-						<span class="ti-wheelchair"></span> In-Patients
-					</a>
-					<ul class="collapse list-unstyled" id="nav-in-patients">
-						<li>
-							<a href="add-in-patient.html">Add In-Patient</a>
-						</li>
-						<li>
-							<a href="in-patients.html">All In-Patients</a>
-						</li>
-						<li>
-							<a href="about-in-patient.html">In-Patient Details</a>
-						</li>
-						<li>
-							<a href="edit-in-patient.html">Edit In-Patient</a>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="#nav-appointment" data-toggle="collapse" aria-expanded="false">
-						<span class="ti-pencil-alt"></span> Appointments
-					</a>
-					<ul class="collapse list-unstyled" id="nav-appointment">
-						<li>
-							<a href="add-appointment.html">Add Appointment</a>
-						</li>
-						<li>
-							<a href="appointments.html">All Appointments</a>
-						</li>
-						<li>
-							<a href="about-appointment.html">Appointment Details</a>
-						</li>
-						<li>
-							<a href="edit-appointment.html">Edit Appointment</a>
-						</li>
-					</ul>
-				</li>
-				
-			<div class="nav-help animated fadeIn">
-				<h5><span class="ti-comments"></span> Need Help</h5>
-				<h6>
-					<span class="ti-mobile"></span> +1 1234 567 890</h6>
-				<h6>
-					<span class="ti-email"></span> email@site.com</h6>
-				<p class="copyright-text">Copy rights &copy; 2018</p>
-			</div>
-		</nav>
-		<!-- /Sidebar -->
-		<!-- Page Content -->
-		<div id="content">
-			<!-- Top Navigation -->
-			<nav class="navbar navbar-default">
-				<div class="container-fluid">
-					<div class="responsive-logo">
-						<a href="index.html"><img src="../images/logo-dark.png" class="logo" alt="logo"></a>
-					</div>
-					<ul class="nav">
-						<li class="nav-item">
-							<span class="ti-menu" id="sidebarCollapse"></span>
-						</li>
-						<li class="nav-item">
-							<span title="Fullscreen" class="ti-fullscreen fullscreen"></span>
-						</li>
-						<li class="nav-item">
-							<a  data-toggle="modal" data-target=".proclinic-modal-lg">
-								<span class="ti-search"></span>
-							</a>
-							<div class="modal fade proclinic-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
-								<div class="modal-dialog modal-lorvens">
-									<div class="modal-content proclinic-box-shadow2">
-										<div class="modal-header">
-											<h5 class="modal-title">Search Patient/Doctor:</h5>
-											<span class="ti-close" data-dismiss="modal" aria-label="Close">
-											</span>
-										</div>
-										<div class="modal-body">
-											<form>
-												<div class="form-group">
-													<input type="text" class="form-control" id="search-term" placeholder="Type text here">
-													<button type="button" class="btn btn-lorvens proclinic-bg">
-														<span class="ti-location-arrow"></span> Search</button>
-												</div>
-											</form>
-										</div>
-									</div>
-								</div>
-							</div>
-						</li>
-						<li class="nav-item">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-								<span class="ti-announcement"></span>
-							</a>
-							<div class="dropdown-menu proclinic-box-shadow2 notifications animated flipInY">
-								<h5>Notifications</h5>
-								<a class="dropdown-item" href="#">
-									<span class="ti-wheelchair"></span> New Patient Added</a>
-								<a class="dropdown-item" href="#">
-									<span class="ti-money"></span> Patient payment done</a>
-								<a class="dropdown-item" href="#">
-									<span class="ti-time"></span>Patient Appointment booked</a>
-								<a class="dropdown-item" href="#">
-									<span class="ti-wheelchair"></span> New Patient Added</a>
-							</div>
-						</li>
-						<li class="nav-item">
-							<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-								<span class="ti-user"></span>
-							</a>
-							<div class="dropdown-menu proclinic-box-shadow2 profile animated flipInY">
-								<h5>John Willing</h5>
-								<a class="dropdown-item" href="#">
-									<span class="ti-settings"></span> Settings</a>
-								<a class="dropdown-item" href="#">
-									<span class="ti-help-alt"></span> Help</a>
-								<a class="dropdown-item" href="#">
-									<span class="ti-power-off"></span> Logout</a>
-							</div>
-						</li>
-					</ul>
-				
-				</div>
-			</nav>
-			<!-- /Top Navigation -->
-			<!-- Breadcrumb -->
-			<!-- Page Title -->
-			<div class="row no-margin-padding">
-				<div class="col-md-6">
-					<h3 class="block-title">Quick Statistics</h3>
-				</div>
-				<div class="col-md-6">
-					<ol class="breadcrumb">
-						<li class="breadcrumb-item">
-							<a href="index.html">
-								<span class="ti-home"></span>
-							</a>
-						</li>
-						<li class="breadcrumb-item active">Dashboard</li>
-					</ol>
-				</div>
-			</div>
-			<!-- /Page Title -->
+    <!-- Pre Loader -->
+    <div class="loading">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+    <!--/Pre Loader -->
 
-			<!-- /Breadcrumb -->
-			
-<!-- Main Content -->
-<div class="container-fluid">
+    <!-- /Color Changer -->
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="proclinic-bg">
+            <div class="sidebar-header">
+                <a href="{% static 'index.html'  %}"><img src="{% static 'images/logo.png' %}" class="logo" alt="logo"></a>
+            </div>
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#nav-dashboard" data-toggle="collapse" aria-expanded="true">
+                        <span class="ti-home"></span> Dashboard
+                    </a>
+                    <ul class="collapse list-unstyled show" id="nav-dashboard">
+                        <li>
+                            <a href="{% static 'index.html'  %}">Home</a>
+                        </li>
+                    </ul>
+                </li>
 
-	<div class="row">
-		<!-- Widget Item -->
-		<div class="col-md-12">
-			<div class="widget-area-2 proclinic-box-shadow">
-				<h3 class="widget-title">Edit Patient</h3>
-				<form>
-					<div class="form-row">
-						<div class="form-group col-md-6">
-							<label for="patient-name">Patient Name</label>
-							<input type="text" value="Daniel Smith" class="form-control" placeholder="Patient name" id="patient-name">
-						</div>
-						<div class="form-group col-md-6">
-							<label for="dob">Date Of Birth</label>
-							<input type="date" value="1989-10-10" placeholder="Date of Birth" class="form-control" id="dob">
-						</div>
-						<div class="form-group col-md-6">
-							<label for="age">Age</label>
-							<input type="text" value="30" placeholder="Age" class="form-control" id="age">
-						</div>
-						<div class="form-group col-md-6">
-							<label for="phone">Phone</label>
-							<input type="text" value="12345 67890" placeholder="Phone" class="form-control" id="phone">
-						</div>
-						<div class="form-group col-md-6">
-							<label for="email">Email</label>
-							<input type="email" value="email@email.com" placeholder="email" class="form-control" id="Email">
-						</div>
-						<div class="form-group col-md-6">
-							<label for="gender">Gender</label>
-							<select class="form-control" id="gender">
-								<option selected>Male</option>
-								<option>Female</option>
-								<option>Other</option>
-							</select>
-						</div>
-						<div class="form-group col-md-12">
-							<label for="exampleFormControlTextarea1">Address</label>
-							<textarea placeholder="Address" class="form-control" id="exampleFormControlTextarea1" rows="3">Koramangala Banglore, India</textarea>
-						</div>
-						<div class="form-group col-md-12">
-							<label for="file">File</label>
-							<input type="file" class="form-control" id="file">
-						</div>
-															
-						<div class="form-check col-md-12 mb-2">
-							<div class="text-left">
-								<div class="custom-control custom-checkbox">
-									<input class="custom-control-input" type="checkbox" id="ex-check-2">
-									<label class="custom-control-label" for="ex-check-2">Please Confirm</label>
-								</div>
-							</div>
-						</div>
-						<div class="form-group col-md-6 mb-3">
-							<button type="submit" class="btn btn-primary btn-lg">Update</button>
-						</div>
-					</div>
-				</form>
-				<!-- Alerts-->
-				<div class="alert alert-success alert-dismissible fade show" role="alert">
-					<strong>Successfully Updated!</strong> Please add payment now
-					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-						<span aria-hidden="true">×</span>
-					</button>
-				</div>
-				<div class="alert alert-warning alert-dismissible fade show" role="alert">
-					<strong>Holy guacamole!</strong> You should check in on some of those fields below.
-					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-						<span aria-hidden="true">×</span>
-					</button>
-				</div>
-				<!-- /Alerts-->
-			</div>
-		</div>
-		<!-- /Widget Item -->
-	</div>
-</div>
-<!-- /Main Content -->
-		</div>
-		<!-- /Page Content -->
-	</div>
-	<!-- Back to Top -->
-	<a id="back-to-top" href="#" class="back-to-top">
-		<span class="ti-angle-up"></span>
-	</a>
-	<!-- /Back to Top -->
-	
-	<!-- Jquery Library-->
-	<script src="../js/jquery-3.2.1.min.js"></script>
-	<!-- Popper Library-->
-	<script src="../js/popper.min.js"></script>
-	<!-- Bootstrap Library-->
-	<script src="../js/bootstrap.min.js"></script>
-	<!-- morris charts -->
-	<script src="../charts/js/raphael-min.js"></script>
-	<script src="../charts/js/morris.min.js"></script>
-	<script src="../js/custom-morris.js"></script>
+                <li>
+                    <a href="#nav-doctors" data-toggle="collapse" aria-expanded="false">
+                        <span class="ti-user"></span> Doctors
+                    </a>
+                    <ul class="collapse list-unstyled" id="nav-doctors">
+                        <li>
+                            <a href="{% static 'add_doctor.html' %}  ">Add Doctor</a>
+                        </li>
+                        <li>
+                            <a href="{% static 'all_doctors.html'  %}">All Doctors</a>
+                        </li>
+                        <li>
+                            <a href="{% static 'doctor_details.html' %}">Doctor Details</a>
+                        </li>
+                        <li>
+                            <a href="{% static 'edit_doctor.html' %}">Edit Doctor</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#nav-receptionists" data-toggle="collapse" aria-expanded="false">
+                        <span class="ti-user"></span> Receptionists
+                    </a>
+                    <ul class="collapse list-unstyled" id="nav-receptionists">
+                        <li>
+                            <a href="{% static 'add_receptionist.html' %}">Add Receptionist</a>
+                        </li>
+                        <li>
+                            <a href="{% static 'all_receptionists.html' %}">All Receptionists</a>
+                        </li>
+                        <li>
+                            <a href="{% static 'receptionist_details.html' %}">Receptionist Details</a>
+                        </li>
+                        <li>
+                            <a href="{% static 'edit_receptionist.html' %}">Edit Receptionist</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#nav-lab-technicians" data-toggle="collapse" aria-expanded="false">
+                        <span class="ti-user"></span> Lab Technicians
+                    </a>
+                    <ul class="collapse list-unstyled" id="nav-lab-technicians">
+                        <li>
+                            <a href="{% static 'dd_lab_technician.html' %}">Add Lab Technician</a>
+                        </li>
+                        <li>
+                            <a href="{% static 'all_lab_technicians.html' %}">All Lab Technicians</a>
+                        </li>
+                        <li>
+                            <a href="{% static 'lab_technician_details.html' %}">Lab Technician Details</a>
+                        </li>
+                        <li>
+                            <a href="{% static 'edit_lab_technician.html' %}">Edit Lab Technician</a>
+                        </li>
+                    </ul>
+                </li>
+                <div class="nav-help animated fadeIn">
+                    <h5><span class="ti-comments"></span> Need Help</h5>
+                    <h6>
+                        <span class="ti-mobile"></span> +1 1234 567 890</h6>
+                    <h6>
+                        <span class="ti-email"></span> email@site.com</h6>
+                    <p class="copyright-text">Copy rights &copy; 2018</p>
+                </div>
+            </ul>
+        </nav>
+        <!-- /Sidebar -->
+        <!-- Page Content -->
+        <div id="content">
+            <!-- Top Navigation -->
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="responsive-logo">
+                        <a href="{% static 'index.html'  %}"><img src="{% static 'images/logo-dark.png' %}" class="logo"
+                                alt="logo"></a>
+                    </div>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <span class="ti-menu" id="sidebarCollapse"></span>
+                        </li>
+                        <li class="nav-item">
+                            <span title="Fullscreen" class="ti-fullscreen fullscreen"></span>
+                        </li>
+                        <li class="nav-item">
+                            <a data-toggle="modal" data-target=".proclinic-modal-lg">
+                                <span class="ti-search"></span>
+                            </a>
+                            <div class="modal fade proclinic-modal-lg" tabindex="-1" role="dialog"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-lorvens">
+                                    <div class="modal-content proclinic-box-shadow2">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Search Patient/Doctor:</h5>
+                                            <span class="ti-close" data-dismiss="modal" aria-label="Close">
+                                            </span>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="search-term"
+                                                        placeholder="Type text here">
+                                                    <button type="button" class="btn btn-lorvens proclinic-bg">
+                                                        <span class="ti-location-arrow"></span> Search</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="ti-announcement"></span>
+                            </a>
+                            <div class="dropdown-menu proclinic-box-shadow2 notifications animated flipInY">
+                                <h5>Notifications</h5>
+                                <a class="dropdown-item" href="#">
+                                    <span class="ti-wheelchair"></span> New Patient Added</a>
+                                <a class="dropdown-item" href="#">
+                                    <span class="ti-money"></span> Patient payment done</a>
+                                <a class="dropdown-item" href="#">
+                                    <span class="ti-time"></span> Patient Appointment booked</a>
+                                <a class="dropdown-item" href="#">
+                                    <span class="ti-wheelchair"></span> New Patient Added</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="ti-user"></span>
+                            </a>
+                            <div class="dropdown-menu proclinic-box-shadow2 profile animated flipInY">
+                                <h5>John Willing</h5>
+                                <a class="dropdown-item" href="#">
+                                    <span class="ti-settings"></span> Settings</a>
+                                <a class="dropdown-item" href="#">
+                                    <span class="ti-help-alt"></span> Help</a>
+                                <a class="dropdown-item" href="#">
+                                    <span class="ti-power-off"></span> Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- /Top Navigation -->
+            <!-- Breadcrumb -->
+            <!-- Page Title -->
+            <div class="row no-margin-padding">
+                <div class="col-md-6">
+                    <h3 class="block-title">Quick Statistics</h3>
+                </div>
+                <div class="col-md-6">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="{% static 'index.html'  %}">
+                                <span class="ti-home"></span>
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item active">Dashboard</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- /Page Title -->
 
-	<!-- Custom Script-->
-	<script src="../js/custom.js"></script>
+            <!-- /Breadcrumb -->
+            <!-- Main Content -->
+            <div class="container-fluid">
+
+                <div class="row">
+                    <!-- Widget Item -->
+                    <div class="col-md-12">
+                        <div class="widget-area-2 proclinic-box-shadow">
+                            <h3 class="widget-title">edit patient</h3>
+                           
+                            <form method="post" action="{% url 'edit-patient' %}">
+
+                                {% csrf_token %}
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="first-name">First Name</label>
+                                        <input type="text" name="first_name" class="form-control" placeholder="First Name" id="first-name">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="last-name">Last Name</label>
+                                        <input type="text" name="last_name" class="form-control" placeholder="Last Name" id="last-name">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="address">Address</label>
+                                        <input type="text" name="address" class="form-control" placeholder="Address" id="address">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="contact-info">Contact Info</label>
+                                        <input type="text" name="contact_info" class="form-control" placeholder="Contact Info" id="contact-info">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="birth-date">Birth Date</label>
+                                        <input type="date" name="birth_date" class="form-control" id="birth-date">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="employer">Employer</label>
+                                        <input type="text" name="employer" class="form-control" placeholder="Employer" id="employer">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="insurance-info">Insurance Info</label>
+                                        <input type="text" name="insurance_info" class="form-control" placeholder="Insurance Info" id="insurance-info">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="id">id </label>
+                                        <input type="number" name="id" class="form-control" placeholder="id" id="id">
+                                    </div>
+                                    
+                                </div>
+                            
+                                <div class="form-check col-md-12 mb-2">
+                                    <div class="text-left">
+                                        <div class="custom-control custom-checkbox">
+                                            <input class="custom-control-input" type="checkbox" id="ex-check-2">
+                                            <label class="custom-control-label" for="ex-check-2">Please Confirm</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <div class="form-group col-md-6 mb-3">
+                                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                                </div>
+                            </form>
+                            
+                            
+                            <!-- Alerts-->
+                            <!-- <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong>Successfully Done!</strong> Please Check in doctors list
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div> -->
+                            <!-- /Alerts-->
+                        </div>
+                    </div>
+                    <!-- /Widget Item -->
+                </div>
+            </div>
+            <!-- /Main Content -->
+        </div>
+        <!-- /Page Content -->
+    </div>
+    <!-- Back to Top -->
+    <a id="back-to-top" href="#" class="back-to-top">
+        <span class="ti-angle-up"></span>
+    </a>
+    <!-- /Back to Top -->
+
+    <!-- Jquery Library-->
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <!-- Popper Library-->
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <!-- Bootstrap Library-->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- morris charts -->
+    <script src="{% static 'charts/js/raphael-min.js' %}"></script>
+    <script src="{% static 'charts/js/morris.min.js' %}"></script>
+    <script src="{% static 'js/custom-morris.js' %}"></script>
+
+    <!-- Custom Script-->
+    <script src="{% static 'js/custom.js' %}"></script>
 </body>
 
-
-<!-- Mirrored from www.konnectplugins.com/proclinic/Vertical/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 24 Jun 2024 11:27:26 GMT -->
 </html>
-

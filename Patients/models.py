@@ -9,7 +9,7 @@ class Patient(models.Model):
     last_name = models.CharField(max_length=100)
     address = models.CharField(max_length=255, blank=True, null=True)
     contact_info = models.CharField(max_length=100, blank=True, null=True)
-    birth_date = models.DateField(blank=True, null=True)
+    birth_date = models.DateField(blank=True, null=True) 
     employer = models.CharField(max_length=100, blank=True, null=True)
     insurance_info = models.CharField(max_length=255, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)

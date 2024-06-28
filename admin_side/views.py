@@ -9,9 +9,8 @@ from Receptionists.serializers import ReceptionistSerializer
 from Doctors.models import Doctor
 from LabTechnicians.models import LabTechnician
 from Receptionists.models import Receptionist
-# from .models import Doctor, LabTechnician, Receptionist
 
-@api_view(['GET'])
+@api_view(['GET']) 
 def about_doctor(request, doctor_id=None):
     if id is not None:
         doctor = get_object_or_404(Doctor, doctor_id=doctor_id)
@@ -110,12 +109,6 @@ def add_lab_technician(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) 
     return render(request, 'admin_side/add-lab-technician.html')
-# @api_view(['GET', 'PUT'])
-# def all_doctors(request):
-#     if request.method == 'GET':
-#         doctors = Doctor.objects.all()
-#         serializer = DoctorSerializer(doctors, many=True)
-#         return Response(serializer.data, status=status.HTTP_200_OK)
     
 
 
