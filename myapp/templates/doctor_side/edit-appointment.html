@@ -54,26 +54,23 @@
                     </a>
                     <ul class="collapse list-unstyled show" id="nav-dashboard">
                         <li>
-                            <a href="{% static 'index.html' %}">Home</a>
+                            <a href="{% url 'index1' %}">Home</a>
                         </li>
-
                     </ul>
                 </li>
-
                 <li>
                     <a href="#nav-appointment" data-toggle="collapse" aria-expanded="false">
                         <span class="ti-pencil-alt"></span> Appointments
                     </a>
                     <ul class="collapse list-unstyled" id="nav-appointment">
-
                         <li>
-                            <a href="{% static 'appointments.html' %}">All Appointments</a>
+                            <a href="{% url 'appointments' id=4 %}">All Appointments</a>
                         </li>
                         <li>
-                            <a href="{% static 'about-appointment.html' %}">Appointment Details</a>
+                            <a href="{% url 'about-appointment' doctor=4 id=1 %}">Appointment Details</a>
                         </li>
                         <li>
-                            <a href="{% static 'edit-appointment.html' %}">Edit Appointment</a>
+                            <a href="{% url 'edit-appointment' %}">Edit Appointment</a>
                         </li>
                     </ul>
                 </li>

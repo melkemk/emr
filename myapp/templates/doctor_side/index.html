@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head>
-{% load  static %}
 
+
+<!-- Mirrored from www.konnectplugins.com/proclinic/Vertical/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 24 Jun 2024 11:26:52 GMT -->
+{% load static %}
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>ProClinic-Bootstrap4 Hospital Admin</title>
-    <!-- Fav Icon Link -->
+    <!-- Fav  Icon Link -->
     <link rel="shortcut icon" type="image/png" href="{% static 'images/fav.png' %}">
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
@@ -25,33 +27,35 @@
     <link rel="stylesheet" href="{% static 'css/jquery-jvectormap.css' %}">
 
     <script src="{% static 'js/modernizr.min.js' %}"></script>
+    <script src="{% static 'js/modernizr.min.js' %}"></script>
 </head>
 
-<body>
-    <!-- Pre Loader -->
-    <div class="loading">
-        <div class="spinner">
-            <div class="double-bounce1"></div>
-            <div class="double-bounce2"></div>
-        </div>
-    </div>
-    <!--/Pre Loader -->
 
-    <!-- /Color Changer -->
-    <div class="wrapper">
-        <!-- Sidebar -->
-        <nav id="sidebar" class="proclinic-bg">
-            <div class="sidebar-header">
-                {% comment %} <a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" class="logo" alt="logo"></a> {% endcomment %}
-            </div>
-            <ul class="list-unstyled components">
-                <li class="active">
+<body>
+	<!-- Pre Loader -->
+	<div class="loading">
+		<div class="spinner">
+			<div class="double-bounce1"></div>
+			<div class="double-bounce2"></div>
+		</div>
+	</div>
+	<!--/Pre Loader -->
+	
+	<!-- /Color Changer -->
+	<div class="wrapper">
+		<!-- Sidebar -->
+		<nav id="sidebar" class="proclinic-bg">
+			<div class="sidebar-header">
+				<a href="index.html"><img src="../images/logo.png" class="logo" alt="logo"></a>
+			</div>
+			<ul class="list-unstyled components">
+				<li class="active">
                     <a href="#nav-dashboard" data-toggle="collapse" aria-expanded="true">
                         <span class="ti-home"></span> Dashboard
                     </a>
                     <ul class="collapse list-unstyled show" id="nav-dashboard">
                         <li>
-                            {% comment %} <a href="{% url 'home' %}">Home</a> {% endcomment %}
+                            <a href="{% url 'index1' %}">Home</a>
                         </li>
                     </ul>
                 </li>
@@ -61,117 +65,119 @@
                     </a>
                     <ul class="collapse list-unstyled" id="nav-appointment">
                         <li>
-                            {% comment %} <a href="{% url 'all_appointments' %}">All Appointments</a>
+                            <a href="{% url 'appointments' id=4 %}">All Appointments</a>
                         </li>
                         <li>
-                            <a href="{% url 'about_appointment' %}">Appointment Details</a>
+                            <a href="{% url 'about-appointment' doctor=4 id=1 %}">Appointment Details</a>
                         </li>
                         <li>
-                            <a href="{% url 'edit_appointment' %}">Edit Appointment</a> {% endcomment %}
+                            <a href="{% url 'edit-appointment' %}">Edit Appointment</a>
                         </li>
                     </ul>
                 </li>
-            <div class="nav-help animated fadeIn">
-                <h5><span class="ti-comments"></span> Need Help</h5>
-                <h6>
-                    <span class="ti-mobile"></span> +1 1234 567 890</h6>
-                <h6>
-                    <span class="ti-email"></span> email@site.com</h6>
-                <p class="copyright-text">Copy rights &copy; 2018</p>
-            </div>
-        </nav>
-        <!-- /Sidebar -->
-        <!-- Page Content -->
-        <div id="content">
-            <!-- Top Navigation -->
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <div class="responsive-logo">
-                        <a href="{% static 'home' %}"><img src="{% static 'images/logo-dark.png' %}" class="logo" alt="logo"></a>
-                    </div>
-                    <ul class="nav">
-                        <li class="nav-item">
-                            <span class="ti-menu" id="sidebarCollapse"></span>
-                        </li>
-                        <li class="nav-item">
-                            <span title="Fullscreen" class="ti-fullscreen fullscreen"></span>
-                        </li>
-                        <li class="nav-item">
-                            <a data-toggle="modal" data-target=".proclinic-modal-lg">
-                                <span class="ti-search"></span>
-                            </a>
-                            <div class="modal fade proclinic-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
-                                <div class="modal-dialog modal-lorvens">
-                                    <div class="modal-content proclinic-box-shadow2">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Search Patient/Doctor:</h5>
-                                            <span class="ti-close" data-dismiss="modal" aria-label="Close"></span>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form>
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control" id="search-term" placeholder="Type text here">
-                                                    <button type="button" class="btn btn-lorvens proclinic-bg">
-                                                        <span class="ti-location-arrow"></span> Search</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                <span class="ti-announcement"></span>
-                            </a>
-                            <div class="dropdown-menu proclinic-box-shadow2 notifications animated flipInY">
-                                <h5>Notifications</h5>
-                                <a class="dropdown-item" href="#">
-                                    <span class="ti-wheelchair"></span> New Patient Added</a>
-                                <a class="dropdown-item" href="#">
-                                    <span class="ti-money"></span> Patient payment done</a>
-                                <a class="dropdown-item" href="#">
-                                    <span class="ti-time"></span>Patient Appointment booked</a>
-                                <a class="dropdown-item" href="#">
-                                    <span class="ti-wheelchair"></span> New Patient Added</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                <span class="ti-user"></span>
-                            </a>
-                            <div class="dropdown-menu proclinic-box-shadow2 profile animated flipInY">
-                                <h5>John Willing</h5>
-                                <a class="dropdown-item" href="#">
-                                    <span class="ti-settings"></span> Settings</a>
-                                <a class="dropdown-item" href="#">
-                                    <span class="ti-help-alt"></span> Help</a>
-                                <a class="dropdown-item" href="#">
-                                    <span class="ti-power-off"></span> Logout</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            <!-- /Top Navigation -->
-            <!-- Breadcrumb -->
-            <!-- Page Title -->
-            <div class="row no-margin-padding">
-                <div class="col-md-6">
-                    <h3 class="block-title">Quick Statistics</h3>
-                </div>
-                <div class="col-md-6">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a href="{% static 'home' %}">
-                                <span class="ti-home"></span>
-                            </a>
-                        </li>
-                        <li class="breadcrumb-item active">Dashboard</li>
-                    </ol>
-                </div>
-            </div>
-            <!-- /Page Title -->
+			<div class="nav-help animated fadeIn">
+				<h5><span class="ti-comments"></span> Need Help</h5>
+				<h6>
+					<span class="ti-mobile"></span> +1 1234 567 890</h6>
+				<h6>
+					<span class="ti-email"></span> email@site.com</h6>
+				<p class="copyright-text">Copy rights &copy; 2018</p>
+			</div>
+		</nav>
+		<!-- /Sidebar -->
+		<!-- Page Content -->
+		<div id="content">
+			<!-- Top Navigation -->
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<div class="responsive-logo">
+						<a href="index.html"><img src="../images/logo-dark.png" class="logo" alt="logo"></a>
+					</div>
+					<ul class="nav">
+						<li class="nav-item">
+							<span class="ti-menu" id="sidebarCollapse"></span>
+						</li>
+						<li class="nav-item">
+							<span title="Fullscreen" class="ti-fullscreen fullscreen"></span>
+						</li>
+						<li class="nav-item">
+							<a  data-toggle="modal" data-target=".proclinic-modal-lg">
+								<span class="ti-search"></span>
+							</a>
+							<div class="modal fade proclinic-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+								<div class="modal-dialog modal-lorvens">
+									<div class="modal-content proclinic-box-shadow2">
+										<div class="modal-header">
+											<h5 class="modal-title">Search Patient/Doctor:</h5>
+											<span class="ti-close" data-dismiss="modal" aria-label="Close">
+											</span>
+										</div>
+										<div class="modal-body">
+											<form>
+												<div class="form-group">
+													<input type="text" class="form-control" id="search-term" placeholder="Type text here">
+													<button type="button" class="btn btn-lorvens proclinic-bg">
+														<span class="ti-location-arrow"></span> Search</button>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="nav-item">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+								<span class="ti-announcement"></span>
+							</a>
+							<div class="dropdown-menu proclinic-box-shadow2 notifications animated flipInY">
+								<h5>Notifications</h5>
+								<a class="dropdown-item" href="#">
+									<span class="ti-wheelchair"></span> New Patient Added</a>
+								<a class="dropdown-item" href="#">
+									<span class="ti-money"></span> Patient payment done</a>
+								<a class="dropdown-item" href="#">
+									<span class="ti-time"></span>Patient Appointment booked</a>
+								<a class="dropdown-item" href="#">
+									<span class="ti-wheelchair"></span> New Patient Added</a>
+							</div>
+						</li>
+						<li class="nav-item">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+								<span class="ti-user"></span>
+							</a>
+							<div class="dropdown-menu proclinic-box-shadow2 profile animated flipInY">
+								<h5>John Willing</h5>
+								<a class="dropdown-item" href="#">
+									<span class="ti-settings"></span> Settings</a>
+								<a class="dropdown-item" href="#">
+									<span class="ti-help-alt"></span> Help</a>
+								<a class="dropdown-item" href="#">
+									<span class="ti-power-off"></span> Logout</a>
+							</div>
+						</li>
+					</ul>
+				
+				</div>
+			</nav>
+			<!-- /Top Navigation -->
+			<!-- Breadcrumb -->
+			<!-- Page Title -->
+			<div class="row no-margin-padding">
+				<div class="col-md-6">
+					<h3 class="block-title">Quick Statistics</h3>
+				</div>
+				<div class="col-md-6">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item">
+							<a href="index.html">
+								<span class="ti-home"></span>
+							</a>
+						</li>
+						<li class="breadcrumb-item active">Dashboard</li>
+					</ol>
+				</div>
+			</div>
+			<!-- /Page Title -->
 
             <!-- /Breadcrumb -->
             <!-- Main Content -->
@@ -221,40 +227,46 @@
                     <!-- /Widget Item -->
                 </div>
 
-                <div class="row">
-                    <!-- Widget Item -->
-                    <div class="col-md-6">
-                        <div class="widget-area-2 proclinic-box-shadow">
-                            <h3 class="widget-title">Appointments Year by Year</h3>
-                            <div id="lineMorris" class="chart-home"></div>
-                        </div>
-                    </div>
-                    <!-- /Widget Item -->
-                    <!-- Widget Item -->
-                    <div class="col-md-6">
-                        <div class="widget-area-2 proclinic-box-shadow">
-                            <h3 class="widget-title"> Patients Year by Year</h3>
-                            <div id="barMorris" class="chart-home"></div>
-                        </div>
-                    </div>
-                    <!-- /Widget Item -->
-                </div>
+				<div class="row">
+					<!-- Widget Item -->
+					<div class="col-md-6">
+						<div class="widget-area-2 proclinic-box-shadow">
+							<h3 class="widget-title">Appointments Year by Year</h3>
+							<div id="lineMorris" class="chart-home"></div>
+						</div>
+					</div>
+					<!-- /Widget Item -->
+					<!-- Widget Item -->
+					<div class="col-md-6">
+						<div class="widget-area-2 proclinic-box-shadow">
+							<h3 class="widget-title"> Patients Year by Year</h3>
+							<div id="barMorris" class="chart-home"></div>
+						</div>
+					</div>
+					<!-- /Widget Item -->
+				</div>
 
-                <div style="height: 100px;">
-                </div>
-            </div>
-        </div>
-        <!-- /Main Content -->
-    </div>
-    <!-- /Page Content -->
-    <!-- Back to Top -->
-    <a id="back-to-top" href="#" class="back-to-top">
-        <span class="ti-angle-up"></span>
-    </a>
-    <!-- /Back to Top -->
-    
-    <!-- Jquery Library-->
-    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+				<div style="height: 100px;">
+
+				</div>
+
+				
+
+				</div>
+
+			</div>
+			<!-- /Main Content -->
+		</div>
+		<!-- /Page Content -->
+	</div>
+	<!-- Back to Top -->
+	<a id="back-to-top" href="#" class="back-to-top">
+		<span class="ti-angle-up"></span>
+	</a>
+	<!-- /Back to Top -->
+	
+	<!-- Jquery Library-->
+	<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
     <!-- Popper Library-->
     <script src="{% static 'js/popper.min.js' %}"></script>
     <!-- Bootstrap Library-->
@@ -264,6 +276,8 @@
     <script src="{% static 'charts/js/morris.min.js' %}"></script>
     <script src="{% static 'js/custom-morris.js' %}"></script>
 
+    <!-- Custom Script-->
+    <script src="{% static 'js/custom.js' %}"></script>
     <!-- Custom Script-->
     <script src="{% static 'js/custom.js' %}"></script>
 </body>
